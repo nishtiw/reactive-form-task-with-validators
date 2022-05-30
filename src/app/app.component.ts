@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-directive-practice';
+
+  // isFirstName = false;
+
+  make = "Maruti Suzuki";
+
+  getKia() {
+    return "Kia";
+  }
+
+  // cars = ["Hyundai", "Kia", "Tata", "Maruti Suzuki"];
 }
