@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,15 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-directive-practice';
+  title = 'Register';
+  loginForm = new FormGroup({
+    user: new FormControl(''), 
+    course: new FormControl(''),
+  })
 
-  // isFirstName = false;
-
-  make = "Maruti Suzuki";
-
-  getKia() {
-    return "Kia";
+  objects: any = [];
+  
+  loginUser()
+  {
+    this.objects.push(this.loginForm.value);
+    console.warn(this.loginForm.value);
+    console.log(this.objects);
   }
+ 
 
-  // cars = ["Hyundai", "Kia", "Tata", "Maruti Suzuki"];
 }

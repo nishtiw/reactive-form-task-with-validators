@@ -1,31 +1,30 @@
-<h1>ng directives practice</h1>
-<!-- <p>ngif practice</p>
-
-<div *ngIf = "isFirstName; 
-then firstName; else lastName">
+<div class="loginform">
+  <h1 class="text-align">{{ title }}</h1>
+  <div>
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <div class="float100">
+        <div class="float50">
+          <label for="">Enter Name: </label>
+        </div>
+        <div class="float50">
+          <input type="text" name="" id="user" placeholder="Enter name" formControlName="user">
+        </div>
+      </div>
+      <div class="float100">
+        <div class="float50">
+          <label for="">Enter Course: </label>
+        </div>
+        <div class="float50">
+          <input type="text" name="" id="course" placeholder="Enter course" formControlName="course">
+        </div>
+        <div class="button-div">
+          <input type="submit" value="Register" class="button">
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-
-<ng-template #firstName>
-  <h2>Nisha</h2>
-</ng-template>
-
-<ng-template #lastName>
-  <h2>Tiwari</h2>
-</ng-template> -->
-
-<p>ng-switch practice</p>
-
-<div [ngSwitch]="make">
-  <h2 *ngSwitchCase="'Hyundai'">Hyundai</h2>
-  <h2 *ngSwitchCase="'getKia()'">Kia</h2>
-  <h2 *ngSwitchCase="'Tata'">Tata</h2>
-  <h2 *ngSwitchDefault>No match found!</h2>
+<div *ngFor="let object of objects" class="card">
+  <h3 class="">Name: {{ object.user }}</h3>
+  <h3 class="">Course: {{ object.course }}</h3>
 </div>
-
-<!-- <p>ng for practice</p>
-
-<div *ngFor="let car of cars; index as i">
-  <h2>{{ i }} - {{ car }}</h2>
-</div> -->
-
-<router-outlet></router-outlet>
