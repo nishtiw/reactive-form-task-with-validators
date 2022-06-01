@@ -4,7 +4,7 @@
     <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
       <div class="float100">
         <div class="float50">
-          <label for="">Enter Name: </label>
+          <label for="" id="n">Enter Name: </label>
         </div>
         <div class="float50">
           <input type="text" name="" id="user" placeholder="Enter name" formControlName="user">
@@ -12,7 +12,7 @@
       </div>
       <div class="float100">
         <div class="float50">
-          <label for="">Enter Course: </label>
+          <label for="" id="c">Enter Course: </label>
         </div>
         <div class="float50">
           <input type="text" name="" id="course" placeholder="Enter course" formControlName="course">
@@ -22,9 +22,17 @@
         </div>
       </div>
     </form>
+    <!-- <p>User name: {{ loginForm.value }}</p> -->
+    <p>{{ loginForm.status }}</p>
   </div>
 </div>
-<div *ngFor="let object of objects" class="card">
-  <h3 class="">Name: {{ object.user }}</h3>
-  <h3 class="">Course: {{ object.course }}</h3>
+<!-- <ng-template> -->
+  <div *ngFor="let object of objects" class="card">
+    <h3 class="">Name: {{ object.user }}</h3>
+    <h3 class="">Course: {{ object.course }}</h3>
+  </div>
+<!-- </ng-template> -->
+<div>
+  <input type="text" name="" id="user" placeholder="Enter username" [formControl]="user2">
+  <p>{{ user2.value }}</p>
 </div>
